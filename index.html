@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Выбор дат</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>SEO</h2>
+        <svg id="icon1" width="32" height="32">
+          <use xlink:href="img/icon.svg#icon1"></use>
+        </svg>
+        <img id="icon11" src="./img/arrow.svg" alt="" style="display: none" />
+      </div>
+      <ul class="sidebar-menu" id="sidebar-menu">
+        <li class="icon">
+          <img src="./img/analit.svg" alt="" />
+          <a href="#">Аналитика проекта</a>
+        </li>
+        <li class="icons">
+          <a href="#" class="submenu-toggle">
+            <img src="./img/settings.svg" alt="" />
+            Позиции из Я.Вебмастера
+            <img class="img" src="./img/iconup.svg" alt="" />
+          </a>
+          <ul class="submenu">
+            <li><a href="#">Запросы Я.Вебмастер</a></li>
+            <li><a href="#">URLs Я.Вебмастер</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./img/position.svg" alt="" />Съём позиций (Live/XML)</a
+          >
+        </li>
+        <li>
+          <a href="#"> <img src="./img/project.svg" alt="" />Мои проекты</a>
+        </li>
+      </ul>
+    </div>
+    <div class="center">
+      <!-- Top menu bar -->
+      <div class="top-menu">
+        <div class="left">
+          <div class="project-name">
+            Проект 1 <span class="dropdown-arrow">▼</span>
+            <button class="refresh-icon">
+              <svg width="32" height="32">
+                <use xlink:href="img/icon.svg#icon7"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="refresh">
+            <span>Обновлено</span>
+          </div>
+          <div class="new-project">
+            <button>+ Новый проект</button>
+          </div>
+        </div>
+        <div class="user-profile">
+          <button class="profile-icon">
+            <svg width="42" height="42">
+              <use xlink:href="img/icons.svg#icon8"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="center-menu">
+        <div class="centerLeft">
+          <div class="search">
+            <svg width="40" height="40">
+              <use xlink:href="img/centerMenuIcon.svg#icon6"></use>
+            </svg>
+            <input type="search" placeholder="Начните вводить слово" />
+          </div>
+          <div class="date-range-container">
+            <img src="./img/calendar.svg" alt="" />
+            <input
+              type="date"
+              id="startDate"
+              class="date-input"
+              placeholder="Начальная дата"
+            />
+            <span class="date-separator">—</span>
+            <input
+              type="date"
+              id="endDate"
+              class="date-input"
+              placeholder="Конечная дата"
+            />
+            <img src="./img/down.svg" alt="" />
+          </div>
+          <div class="icons1">
+            <svg id="icon6" width="32" height="32">
+              <use xlink:href="img/centerMenuIcon.svg#icon12"></use>
+            </svg>
+            <svg id="icon13" width="42" height="42">
+              <use xlink:href="img/centerMenuIcon.svg#icon13"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="right">
+          <a href="">Сбросить сортировку</a>
+          <div class="setting">
+            <img src="./img/setting.svg" alt="" />
+            <span>Настройки</span>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="date-picker">
+          <div class="quick-options">
+            <button>Сегодня</button>
+            <button>Вчера</button>
+            <button>Последние 7 дней</button>
+            <button>Последние 30 дней</button>
+            <button>Последние 90 дней</button>
+            <button>От начала работы</button>
+            <div class="controls">
+              <button id="apply">Применить</button>
+              <button id="cancel">Отменить</button>
+            </div>
+          </div>
+          <div id="calendar" class="calendar">
+            <div class="month">
+                <div class="prev-month" id="prevMonth">&lt;</div>
+                <span id="monthName1"></span>
+                <span id="monthName2"></span>
+                <span id="monthName3"></span>
+                <div class="next-month" id="nextMonth">&gt;</div>
+            </div>
+            <div class="months-container">
+                <table class="month-days" id="month1">
+                    <thead class="days-header">
+                        <tr>
+                            <th>Пн</th>
+                            <th>Вт</th>
+                            <th>Ср</th>
+                            <th>Чт</th>
+                            <th>Пт</th>
+                            <th>Сб</th>
+                            <th>Вс</th>
+                        </tr>
+                    </thead>
+                    <tbody class="days" id="days1"></tbody>
+                </table>
+                <table class="month-days" id="month2">
+                    <thead class="days-header">
+                        <tr>
+                            <th>Пн</th>
+                            <th>Вт</th>
+                            <th>Ср</th>
+                            <th>Чт</th>
+                            <th>Пт</th>
+                            <th>Сб</th>
+                            <th>Вс</th>
+                        </tr>
+                    </thead>
+                    <tbody class="days" id="days2"></tbody>
+                </table>
+                <table class="month-days" id="month3">
+                    <thead class="days-header">
+                        <tr>
+                            <th>Пн</th>
+                            <th>Вт</th>
+                            <th>Ср</th>
+                            <th>Чт</th>
+                            <th>Пт</th>
+                            <th>Сб</th>
+                            <th>Вс</th>
+                        </tr>
+                    </thead>
+                    <tbody class="days" id="days3"></tbody>
+                </table>
+            </div>
+        </div>
+        
+      </div>
+      <div class="bottom-menu">
+        <div class="left">
+          <svg id="prevPage" width="32" height="32">
+            <use xlink:href="img/icons.svg#icon9"></use>
+          </svg>
+          <span>Страница</span>
+          <input type="number" id="pageInput" max="5" value="1" />
+          <span>из 5</span>
+          <svg width="32" height="32" id="nextPage">
+            <use xlink:href="img/icons.svg#icon10"></use>
+          </svg>
+        </div>
+        <div class="num">
+          <input type="number" placeholder="50" size="4" />
+          <svg id="icon5" width="32" height="32">
+            <use xlink:href="img/icon.svg#icon5"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
